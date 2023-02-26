@@ -9,7 +9,7 @@
 
 ## Testing
 Continous integration is set up to test that:
-- The environment files work on Linux
+- The environment files work on Linux and macOS
 - The PyHC packages can be imported
 
 **There is no testing that the packages work correctly.**
