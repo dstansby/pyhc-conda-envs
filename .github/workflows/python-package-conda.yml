@@ -18,18 +18,20 @@ jobs:
         python-version: '3.11'
 
     - name: Add conda to system path
+      shell: bash
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         echo $CONDA/bin >> $GITHUB_PATH
 
     - name: Create conda environment
+      shell: bash
       run: |
         conda env create -f environment_core.yml -q -v
+        conda init bash
 
     - name: Check PyHC packages can be imported
       shell: bash
       run: |
-        conda init bash
         conda activate pyhc-core
         python -c "import hapiclient"
         python -c "import plasmapy"
