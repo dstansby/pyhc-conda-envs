@@ -24,10 +24,12 @@ jobs:
 
     - name: Create conda environment
       run: |
-        conda env create -f environment_core.yml
+        conda env create -f environment_core.yml -q -v
 
     - name: Check PyHC packages can be imported
+      shell: bash
       run: |
+        conda init bash
         conda activate pyhc-core
         python -c "import hapiclient"
         python -c "import plasmapy"
