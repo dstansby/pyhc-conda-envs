@@ -24,11 +24,10 @@ jobs:
 
     - name: Check PyHC packages can be imported
       run: |
-        conda info
         conda activate pyhc-core
+        conda info
         python -c "import hapiclient"
         python -c "import plasmapy"
         python -c "import pysat"
         python -c "import pyspedas"
-        python -c "import spacepy"
         python -c "import sunpy"

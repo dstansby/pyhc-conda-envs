@@ -5,6 +5,7 @@
 - Python 3.11
 - Includes all PyHC core packages
 - Does *not* include `kamodo`, as it is not compatible with Python 3.11
+- Does *not* include `spacepy`, as I couldn't work out how install it on my laptop
 
 ## Testing
 Continous integration is set up to test that:
