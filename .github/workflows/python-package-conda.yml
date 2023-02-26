@@ -17,10 +17,10 @@ jobs:
       with:
         auto-update-conda: true
         environment-file: environment_core.yml
-        activate-environment: pyhc-core
 
     - name: Check PyHC packages can be imported
       run: |
+        conda activate pyhc-core
         python -c "import hapiclient"
         python -c "import plasmapy"
         python -c "import pysat"
