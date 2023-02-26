@@ -12,22 +12,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.11'
 
-    - name: Add conda to system path
-      shell: bash
-      run: |
-        # $CONDA is an environment variable pointing to the root of the miniconda directory
-        echo $CONDA/bin >> $GITHUB_PATH
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        python-version: '3.11'
 
     - name: Create conda environment
       shell: bash
       run: |
         conda env create -f environment_core.yml -q -v
-        conda init bash
 
     - name: Check PyHC packages can be imported
       shell: bash
