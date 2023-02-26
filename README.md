@@ -23,13 +23,4 @@ Continous integration is set up to test that:
 1. Install any remaining dependencies using pip.
 1. Install remaining PyHC projects using pip.
 1. Remove any packages that are not generally available across operating system.
-   These will still be installed if needed as dependencies, but aren't pinned to specific versions in the environment file.
-   Currently these are:
-    - `libev`
-    - `ncurses`
-    - `libgfortran5`
-    - `brunsli`
-    - `libcxx`
-    - `libnghttp2`
-    - `readline`
-    - `libedit`
+   Currently this is just `libgfortran`.
