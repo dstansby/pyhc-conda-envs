@@ -1,0 +1,33 @@
+name: Test Conda environment creation
+
+on: [push]
+
+jobs:
+  test-env:
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -el {0}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        environment-file: environment_core.yml
+        auto-activate-base: false
+        activate-environment: pyhc-core
+
+    - name: Check PyHC packages can be imported
+      run: |
+        conda activate pyhc-core
+        conda info
+        python -c "import hapiclient"
+        python -c "import plasmapy"
+        python -c "import pysat"
+        python -c "import pyspedas"
+        python -c "import sunpy"
