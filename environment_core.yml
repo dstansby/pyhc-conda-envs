@@ -1,4 +1,4 @@
-name: pyhc-py311
+name: pyhc-core
 channels:
   - conda-forge
 dependencies:
