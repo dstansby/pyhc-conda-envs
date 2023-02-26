@@ -219,4 +219,3 @@ dependencies:
       - pysat==3.0.6
       - pyspedas==1.4.23
       - pytplot-mpl-temp==2.1.17
-prefix: /Users/dstansby/mambaforge/envs/pyhc-py311
