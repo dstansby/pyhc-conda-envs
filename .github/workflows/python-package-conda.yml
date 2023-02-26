@@ -15,11 +15,14 @@ jobs:
 
     - uses: conda-incubator/setup-miniconda@v2
       with:
-        auto-update-conda: true
         environment-file: environment_core.yml
+        auto-activate-base: false
+        activate-environment: pyhc-core
+
 
     - name: Check PyHC packages can be imported
       run: |
+        conda info
         conda activate pyhc-core
         python -c "import hapiclient"
         python -c "import plasmapy"
