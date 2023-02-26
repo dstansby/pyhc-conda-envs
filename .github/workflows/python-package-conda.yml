@@ -14,10 +14,21 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: '3.11'
+
     - name: Add conda to system path
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         echo $CONDA/bin >> $GITHUB_PATH
-    - name: Install dependencies
+
+    - name: Create conda environment
       run: |
         conda env create -f environment_core.yml
+
+    - name: Check PyHC packages can be imported
+      run: |
+        python -c "import hapiclient"
+        python -c "import plasmapy"
+        python -c "import pysat"
+        python -c "import pyspedas"
+        python -c "import spacepy"
+        python -c "import sunpy"
