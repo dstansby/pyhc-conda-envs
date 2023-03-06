@@ -18,10 +18,9 @@ Continous integration is set up to test that:
 **There is no testing that the packages work correctly.**
 
 ## Design
-The goal of the environment file is to make it possible to quickly create a fresh conda environment with all the core PyHC projects installed.
+The goal of the environment file is to make it possible to quickly create a fresh conda environment with all the core PyHC projects installed on any operating system.
 This motivates the following design choices:
-- Packages (including dependencies) are installed from conda where possible.
-- All packages installed in the environment are listed. (some platform specific dependencies are not currently listed, but ideally would be).
+- Packages are installed from conda where possible.
 - Packages are pinned to specific versions, to make sure the environment file as tested is the one that users use.
 
 
