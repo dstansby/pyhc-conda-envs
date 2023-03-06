@@ -1,4 +1,8 @@
 # Python in Heliophyisics conda environments
+This respoitory contains a conda environment file that can be used to install [Python in Heliophysics](https://heliopython.org/) core packages in a single new conda environment
+
+## Using
+See [Creating an Environment from an Environment yml File](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).
 
 ## Available environments
 ### `environment_core.yml`
