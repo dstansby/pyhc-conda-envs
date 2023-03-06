@@ -4,8 +4,7 @@ This respoitory contains a conda environment file that can be used to install [P
 ## Using
 See [Creating an Environment from an Environment yml File](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).
 
-## Available environments
-### `environment_core.yml`
+The environment has the following spec:
 - Python 3.11
 - Includes all PyHC core packages
 - Does *not* include `kamodo`, as it is not compatible with Python 3.11
@@ -17,6 +16,14 @@ Continous integration is set up to test that:
 - The PyHC packages can be imported
 
 **There is no testing that the packages work correctly.**
+
+## Design
+The goal of the environment file is to make it possible to quickly create a fresh conda environment with all the core PyHC projects installed.
+This motivates the following design choices:
+- Packages (including dependencies) are installed from conda where possible.
+- All packages installed in the environment are listed. (some platform specific dependencies are not currently listed, but ideally would be).
+- Packages are pinned to specific versions, to make sure the environment file as tested is the one that users use.
+
 
 ## Creation method
 
