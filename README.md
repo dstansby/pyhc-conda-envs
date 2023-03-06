@@ -26,3 +26,5 @@ Continous integration is set up to test that:
 1. For remaining PyHC projects, install as many of their dependencies from conda as possible.
 1. Install any remaining dependencies using pip.
 1. Install remaining PyHC projects using pip.
+1. Remove any packages that are not generally available across operating system.
+   Currently this is just `libgfortran`.
